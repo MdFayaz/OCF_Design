@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="NWF.js Component Tests" parallel="tests"
+	thread-count="70" preserve-order="true">
+
+
+	<parameter name="grid_port" value="4444"><!--The remote port that is 
+			open on the client by running the Selenium server. Normally 4444. -->
+	</parameter>
+
+	<parameter name="browser_window_height" value="1600"><!--The height of 
+			the browser window to be used for the tests. -->
+	</parameter>
+	<parameter name="browser_window_width" value="900"><!--The height of 
+			the browser window to be used for the tests. -->
+	</parameter>
+
+	<parameter name="screenshot" value="No"><!--To take screen shot. -->
+	</parameter>
+
+	<parameter name="client_browser" value="chrome"><!--Browser to be used 
+			for the tests. Values could be firefox/chrome/safari/internet explorer -->
+	</parameter>
+	<parameter name="client_browserversion" value="xpff10"><!--The version 
+			of the browser to be used for the tests. -->
+	</parameter>
+
+
+	<test name="login tests" preserve-order="true">
+		<parameter name="grid_client" value="127.0.0.1"><!--The Client from where 
+				you want to access selenium server through a browser. -->
+		</parameter>
+
+		<parameter name="sapp_server" value="127.0.0.1"><!--The Bard server ip address 
+				to access the OCUM server -->
+		</parameter>
+	
+		
+		<parameter name="sapp_url" value="http://10.225.39.197/#login"><!--The web address to access 
+				the Sample App server -->
+		</parameter>
+		
+		<parameter name="sapp_username" value="admin"><!--The web address to 
+				access the Sample App server -->
+		</parameter>
+		<parameter name="sapp_password" value="netapp1!"><!--The web address to 
+				access the Sample App server -->
+		</parameter>
+
+		<classes>
+			<!-- <class name="com.netapp.nwfjsvalidation.testcases.login.LoginTest"></class> -->
+			<!-- <class name="com.netapp.nwfjsvalidation.testcases.login.ForgotPasswordTest"></class> -->
+<!-- 			<class name="com.netapp.nwfjsvalidation.testcases.management.users.ManageUsersTest"></class> -->
+<!-- <class name = "com.netapp.nwfjsvalidation.setup.Setup" /> -->
+<!-- 		<class name="com.netapp.nwfjsvalidation.testcases.login.LoginTests" /> -->
+<!-- 		<class name="com.netapp.nwfjsvalidation.testcases.admin.AdminTests" /> -->
+			<class name="com.netapp.nwfjsvalidation.testcases.datasources.DataSourcesTests" />
+		</classes>
+
+	</test>
+
+</suite>
